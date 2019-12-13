@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
 
     <LinearLayout
@@ -41,6 +40,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:baselineAligned="false"
             android:orientation="horizontal">
 
             <LinearLayout
@@ -57,6 +57,7 @@
 
                     <Button
                         android:id="@+id/letter_vow"
+                        style="?android:attr/borderlessButtonStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -65,6 +66,7 @@
 
                     <Button
                         android:id="@+id/letter_judge"
+                        style="?android:attr/borderlessButtonStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -72,6 +74,7 @@
 
                     <Button
                         android:id="@+id/letter_measure"
+                        style="?android:attr/borderlessButtonStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -80,6 +83,7 @@
 
                     <Button
                         android:id="@+id/letter_yea"
+                        style="?android:attr/borderlessButtonStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -87,6 +91,7 @@
 
                     <Button
                         android:id="@+id/letter_haha"
+                        style="?android:attr/borderlessButtonStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -94,6 +99,7 @@
 
                     <Button
                         android:id="@+id/letter_they"
+                        style="?android:attr/borderlessButtonStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -107,6 +113,7 @@
 
                     <Button
                         android:id="@+id/letter_fee"
+                        style="?android:attr/borderlessButtonStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -115,6 +122,7 @@
 
                     <Button
                         android:id="@+id/letter_church"
+                        style="?android:attr/borderlessButtonStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -122,6 +130,7 @@
 
                     <Button
                         android:id="@+id/letter_sure"
+                        style="?android:attr/borderlessButtonStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -130,6 +139,7 @@
 
                     <Button
                         android:id="@+id/letter_woe"
+                        style="?android:attr/borderlessButtonStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -137,6 +147,7 @@
 
                     <Button
                         android:id="@+id/letter_hung"
+                        style="?android:attr/borderlessButtonStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -144,6 +155,7 @@
 
                     <Button
                         android:id="@+id/letter_thigh"
+                        style="?android:attr/borderlessButtonStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -159,6 +171,7 @@
 
                     <Button
                         android:id="@+id/letter_peep"
+                        style="?android:attr/borderlessButtonStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -167,6 +180,7 @@
 
                     <Button
                         android:id="@+id/letter_tot"
+                        style="?android:attr/borderlessButtonStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -174,6 +188,7 @@
 
                     <Button
                         android:id="@+id/letter_so"
+                        style="?android:attr/borderlessButtonStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -182,6 +197,7 @@
 
                     <Button
                         android:id="@+id/letter_roar"
+                        style="?android:attr/borderlessButtonStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -189,6 +205,7 @@
 
                     <Button
                         android:id="@+id/letter_nun"
+                        style="?android:attr/borderlessButtonStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -196,6 +213,7 @@
 
                     <Button
                         android:id="@+id/letter_kick"
+                        style="?android:attr/borderlessButtonStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -211,6 +229,7 @@
 
                     <Button
                         android:id="@+id/letter_bib"
+                        style="?android:attr/borderlessButtonStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -219,6 +238,7 @@
 
                     <Button
                         android:id="@+id/letter_dead"
+                        style="?android:attr/borderlessButtonStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -226,6 +246,7 @@
 
                     <Button
                         android:id="@+id/letter_zoo"
+                        style="?android:attr/borderlessButtonStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -234,6 +255,7 @@
 
                     <Button
                         android:id="@+id/letter_loll"
+                        style="?android:attr/borderlessButtonStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -241,6 +263,7 @@
 
                     <Button
                         android:id="@+id/letter_mime"
+                        style="?android:attr/borderlessButtonStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -248,6 +271,7 @@
 
                     <Button
                         android:id="@+id/letter_gag"
+                        style="?android:attr/borderlessButtonStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -271,6 +295,7 @@
 
                     <Button
                         android:id="@+id/letter_up"
+                        style="?android:attr/borderlessButtonStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -278,6 +303,7 @@
 
                     <Button
                         android:id="@+id/letter_oak"
+                        style="?android:attr/borderlessButtonStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -285,6 +311,7 @@
 
                     <Button
                         android:id="@+id/letter_eat"
+                        style="?android:attr/borderlessButtonStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -292,6 +319,7 @@
 
                     <Button
                         android:id="@+id/letter_ooze"
+                        style="?android:attr/borderlessButtonStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -307,6 +335,7 @@
 
                     <Button
                         android:id="@+id/letter_ado"
+                        style="?android:attr/borderlessButtonStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -314,6 +343,7 @@
 
                     <Button
                         android:id="@+id/letter_on"
+                        style="?android:attr/borderlessButtonStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -322,6 +352,7 @@
 
                     <Button
                         android:id="@+id/letter_if"
+                        style="?android:attr/borderlessButtonStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -329,6 +360,7 @@
 
                     <Button
                         android:id="@+id/letter_wool"
+                        style="?android:attr/borderlessButtonStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -344,6 +376,7 @@
 
                     <Button
                         android:id="@+id/letter_age"
+                        style="?android:attr/borderlessButtonStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -351,6 +384,7 @@
 
                     <Button
                         android:id="@+id/letter_ice"
+                        style="?android:attr/borderlessButtonStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -359,6 +393,7 @@
 
                     <Button
                         android:id="@+id/letter_out"
+                        style="?android:attr/borderlessButtonStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -366,6 +401,7 @@
 
                     <Button
                         android:id="@+id/letter_oil"
+                        style="?android:attr/borderlessButtonStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -382,6 +418,7 @@
 
                     <Button
                         android:id="@+id/letter_egg"
+                        style="?android:attr/borderlessButtonStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -389,6 +426,7 @@
 
                     <Button
                         android:id="@+id/letter_ash"
+                        style="?android:attr/borderlessButtonStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -397,6 +435,7 @@
 
                     <Button
                         android:id="@+id/letter_ah"
+                        style="?android:attr/borderlessButtonStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -404,6 +443,7 @@
 
                     <Button
                         android:id="@+id/letter_awe"
+                        style="?android:attr/borderlessButtonStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -419,7 +459,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="0dp"
             android:layout_weight="1"
             android:orientation="horizontal">
 
@@ -431,7 +471,7 @@
                 android:text="Space" />
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/enter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"

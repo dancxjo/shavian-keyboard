@@ -1,4 +1,4 @@
-package com.something.better.than.huh.shaviankeyboard;
+package com.github.dancxjo.shaviankeyboard;
 
 import android.content.Context;
 
@@ -22,6 +22,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
 
-        assertEquals("com.something.better.than.huh.shaviankeyboard", appContext.getPackageName());
+        assertEquals("com.github.dancxjo.shaviankeyboard", appContext.getPackageName());
     }
 }

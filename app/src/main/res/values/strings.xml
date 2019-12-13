@@ -1,9 +1,5 @@
 <resources>
     <string name="app_name">shavian keyboard</string>
-    <string name="action_settings">settings</string>
-
-    <string name="long_vowels">Long</string>
-    <string name="short_vowels">Short</string>
 
     <string name="r_color">+&#x1046e;</string>
     <string name="iota">&#x10458;+</string>

@@ -1,7 +1,6 @@
-package com.something.better.than.huh.shaviankeyboard;
+package com.github.dancxjo.shaviankeyboard;
 
 import android.content.Context;
-import android.text.Html;
 import android.util.AttributeSet;
 import android.util.SparseArray;
 import android.view.LayoutInflater;
@@ -11,21 +10,23 @@ import android.widget.LinearLayout;
 import android.view.View;
 import android.widget.ToggleButton;
 
-public class MyKeyboard extends LinearLayout implements View.OnClickListener {
-    public static class Key {
-        public void onPress(Context context, InputConnection inputConnection, boolean rColoring, boolean iotating) {
-            return;
+public class BipanelKeyboard extends LinearLayout implements View.OnClickListener {
+    static class Key {
+        void onPress(Context context, InputConnection inputConnection, boolean rColoring, boolean iotating) {
         }
 
-        public String getDisplayName(boolean rColoring, boolean iotating) {
+        String getDisplayName(boolean rColoring, boolean iotating) {
             return "";
         }
     }
 
     public static class FourStateKey extends Key {
-        String clear, rColored, iotated, rColoredAndIotated;
+        final String clear;
+        final String rColored;
+        final String iotated;
+        final String rColoredAndIotated;
 
-        public FourStateKey(String clear, String rColored, String iotated, String rColoredAndIotated) {
+        FourStateKey(String clear, String rColored, String iotated, String rColoredAndIotated) {
             this.clear = clear;
             this.rColored = rColored;
             this.iotated = iotated;
@@ -52,27 +53,27 @@ public class MyKeyboard extends LinearLayout implements View.OnClickListener {
         }
     }
 
-    public static class RColoredLetterKey extends FourStateKey {
-        public RColoredLetterKey(String clear, String rColored) {
+    static class RColoredLetterKey extends FourStateKey {
+        RColoredLetterKey(String clear, String rColored) {
             super(clear, rColored, "", "");
         }
     }
 
-    public static class IotatedLetterKey extends FourStateKey {
-        public IotatedLetterKey(String clear, String iotated) {
+    static class IotatedLetterKey extends FourStateKey {
+        IotatedLetterKey(String clear, String iotated) {
             super(clear, "", iotated, "");
         }
     }
 
-    public static class LetterKey extends FourStateKey {
-        public LetterKey(String clear) {
+    static class LetterKey extends FourStateKey {
+        LetterKey(String clear) {
             super(clear, "", "", "");
         }
     }
 
 
-    public static class SpaceKey extends LetterKey {
-        public SpaceKey() {
+    static class SpaceKey extends LetterKey {
+        SpaceKey() {
             super(" ");
         }
     }
@@ -87,22 +88,21 @@ public class MyKeyboard extends LinearLayout implements View.OnClickListener {
         }
     }
 
-    ToggleButton rColoringToggle;
-    ToggleButton iotatingToggleButton;
+    private ToggleButton rColoringToggle;
+    private ToggleButton iotatingToggleButton;
 
-    private SparseArray<Key> keys = new SparseArray<>();
-    private SparseArray<String> displayNames = new SparseArray<>();
+    private final SparseArray<Key> keys = new SparseArray<>();
     private InputConnection inputConnection;
 
-    public MyKeyboard(Context context) {
+    public BipanelKeyboard(Context context) {
         this(context, null, 0);
     }
 
-    public MyKeyboard(Context context, AttributeSet attrs) {
+    public BipanelKeyboard(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public MyKeyboard(Context context, AttributeSet attrs, int defStyleAttr) {
+    public BipanelKeyboard(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init(context, attrs);
     }
@@ -160,24 +160,24 @@ public class MyKeyboard extends LinearLayout implements View.OnClickListener {
         addKey(R.id.letter_awe, iotated(new RColoredLetterKey(getLetter(R.string.letter_awe), getLetter(R.string.letter_or))));
     }
 
-    String iotated(String letter) {
+    private String iotated(String letter) {
         return getLetter(R.string.letter_yea) + letter;
     }
 
-    FourStateKey iotated(RColoredLetterKey letter) {
+    private FourStateKey iotated(RColoredLetterKey letter) {
         return new FourStateKey(letter.clear, letter.rColored, iotated(letter.clear), iotated(letter.rColored));
     }
 
-    RColoredLetterKey lightRColored(LetterKey letter) {
+    private RColoredLetterKey lightRColored(LetterKey letter) {
         return new RColoredLetterKey(letter.clear, letter.clear + getLetter(R.string.letter_roar));
     }
 
 
-    FourStateKey rColored(IotatedLetterKey letter) {
+    private FourStateKey rColored(IotatedLetterKey letter) {
         return new FourStateKey(letter.clear, letter.clear + getLetter(R.string.letter_array), letter.iotated, letter.iotated + getLetter(R.string.letter_array));
     }
 
-    RColoredLetterKey rColored(LetterKey letter) {
+    private RColoredLetterKey rColored(LetterKey letter) {
         return new RColoredLetterKey(letter.clear, letter.clear + getLetter(R.string.letter_array));
     }
 
@@ -185,17 +185,17 @@ public class MyKeyboard extends LinearLayout implements View.OnClickListener {
         return letter + getLetter(R.string.letter_roar);
     }
 
-    void addKey(int id, Key key) {
+    private void addKey(int id, Key key) {
         Button button = findViewById(id);
         button.setOnClickListener(this);
         keys.put(id, key);
     }
 
-    String getLetter(int id) {
+    private String getLetter(int id) {
         return getContext().getResources().getText(id).toString();
     }
 
-    void updateNames() {
+    private void updateNames() {
         for (int i = 0; i < keys.size(); i++) {
             int id = keys.keyAt(i);
             Key key = keys.get(id);

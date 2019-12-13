@@ -1,9 +1,8 @@
-package com.something.better.than.huh.shaviankeyboard;
+package com.github.dancxjo.shaviankeyboard;
 
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
 
 import android.text.InputType;
 import android.view.inputmethod.EditorInfo;
@@ -18,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         EditText editText = findViewById(R.id.editText);
-        MyKeyboard keyboard = findViewById(R.id.keyboard);
+        BipanelKeyboard keyboard = findViewById(R.id.keyboard);
 
         editText.setRawInputType(InputType.TYPE_CLASS_TEXT);
         editText.setTextIsSelectable(true);

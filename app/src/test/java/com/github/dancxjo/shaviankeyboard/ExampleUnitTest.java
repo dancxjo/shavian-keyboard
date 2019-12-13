@@ -1,4 +1,4 @@
-package com.something.better.than.huh.shaviankeyboard;
+package com.github.dancxjo.shaviankeyboard;
 
 import org.junit.Test;
 
