@@ -1,9 +1,11 @@
 package com.github.dancxjo.shaviankeyboard;
 
 import android.content.Context;
+import android.os.Build;
 import android.util.AttributeSet;
 import android.util.SparseArray;
 import android.view.LayoutInflater;
+import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputConnection;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -20,7 +22,7 @@ public class BipanelKeyboard extends LinearLayout implements View.OnClickListene
         }
     }
 
-    public static class FourStateKey extends Key {
+    static class FourStateKey extends Key {
         final String clear;
         final String rColored;
         final String iotated;
@@ -71,20 +73,39 @@ public class BipanelKeyboard extends LinearLayout implements View.OnClickListene
         }
     }
 
-
     static class SpaceKey extends LetterKey {
         SpaceKey() {
             super(" ");
         }
     }
 
-    public static class BackspaceKey extends Key {
+    static class BackspaceKey extends Key {
         public void onPress(Context context, InputConnection inputConnection, boolean rColoring, boolean iotating) {
-            inputConnection.deleteSurroundingText(1, 0);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                inputConnection.deleteSurroundingTextInCodePoints(1, 0);
+            } else {
+                inputConnection.deleteSurroundingText(1, 0);
+            }
         }
 
         public String getDisplayName(boolean r, boolean i) {
             return "back";
+        }
+    }
+
+    static class EnterKey extends Key {
+        public int action = EditorInfo.IME_ACTION_GO;
+        public String message;
+
+        public void onPress(Context context, InputConnection inputConnection, boolean rColoring, boolean iotating) {
+            inputConnection.performEditorAction(action);
+        }
+
+        public String getDisplayName(boolean r, boolean i) {
+            if (message != null) {
+                return message;
+            }
+            return "enter";
         }
     }
 
@@ -118,9 +139,9 @@ public class BipanelKeyboard extends LinearLayout implements View.OnClickListene
 
         addKey(R.id.spacebar, new SpaceKey());
         addKey(R.id.back, new BackspaceKey());
-        addKey(R.id.letter_ado, new FourStateKey(getLetter(R.string.letter_ado), getLetter(R.string.letter_array), getLetter(R.string.letter_ian), getLetter(R.string.letter_ear)));
-        addKey(R.id.letter_peep, new LetterKey(getLetter(R.string.letter_peep)));
-        addKey(R.id.letter_kick, new LetterKey(getLetter(R.string.letter_kick)));
+        addKey(R.id.enter, new EnterKey());
+        addKey(R.id.letter_peep, new FourStateKey(getLetter(R.string.letter_peep), "!", "A", "a"));
+        addKey(R.id.letter_kick, new FourStateKey(getLetter(R.string.letter_kick), "@", "B", "b"));
         addKey(R.id.letter_tot, new LetterKey(getLetter(R.string.letter_tot)));
         addKey(R.id.letter_fee, new LetterKey(getLetter(R.string.letter_fee)));
         addKey(R.id.letter_thigh, new LetterKey(getLetter(R.string.letter_thigh)));
@@ -141,15 +162,17 @@ public class BipanelKeyboard extends LinearLayout implements View.OnClickListene
         addKey(R.id.letter_haha, new LetterKey(getLetter(R.string.letter_haha)));
         addKey(R.id.letter_loll, new LetterKey(getLetter(R.string.letter_loll)));
         addKey(R.id.letter_mime, new LetterKey(getLetter(R.string.letter_mime)));
+        addKey(R.id.letter_roar, new LetterKey(getLetter(R.string.letter_roar)));
+        addKey(R.id.letter_nun, new LetterKey(getLetter(R.string.letter_nun)));
+
         addKey(R.id.letter_if, iotated(new RColoredLetterKey(getLetter(R.string.letter_if), getLetter(R.string.letter_ear))));
         addKey(R.id.letter_egg, iotated(lightRColored(new LetterKey(getLetter(R.string.letter_egg)))));
         addKey(R.id.letter_ash, iotated(lightRColored(new LetterKey(getLetter(R.string.letter_ash)))));
         addKey(R.id.letter_on, iotated(new RColoredLetterKey(getLetter(R.string.letter_on), getLetter(R.string.letter_or))));
+        addKey(R.id.letter_ado, new FourStateKey(getLetter(R.string.letter_ado), getLetter(R.string.letter_array), getLetter(R.string.letter_ian), getLetter(R.string.letter_ear)));
         addKey(R.id.letter_wool, iotated(rColored(new LetterKey(getLetter(R.string.letter_wool)))));
         addKey(R.id.letter_out, iotated(rColored(new LetterKey(getLetter(R.string.letter_out)))));
         addKey(R.id.letter_ah, iotated(new RColoredLetterKey(getLetter(R.string.letter_ah), getLetter(R.string.letter_are))));
-        addKey(R.id.letter_roar, new LetterKey(getLetter(R.string.letter_roar)));
-        addKey(R.id.letter_nun, new LetterKey(getLetter(R.string.letter_nun)));
         addKey(R.id.letter_eat, iotated(new RColoredLetterKey(getLetter(R.string.letter_eat), getLetter(R.string.letter_ear))));
         addKey(R.id.letter_age, iotated(new RColoredLetterKey(getLetter(R.string.letter_age), getLetter(R.string.letter_air))));
         addKey(R.id.letter_ice, iotated(lightRColored(new LetterKey(getLetter(R.string.letter_ice)))));
@@ -159,6 +182,36 @@ public class BipanelKeyboard extends LinearLayout implements View.OnClickListene
         addKey(R.id.letter_oil, iotated(rColored(new LetterKey(getLetter(R.string.letter_oil)))));
         addKey(R.id.letter_awe, iotated(new RColoredLetterKey(getLetter(R.string.letter_awe), getLetter(R.string.letter_or))));
     }
+
+    public void setEditorInfo(EditorInfo info) {
+        setAction(info.actionId);
+        if (info.actionLabel != null) {
+            setMessage(info.actionLabel.toString());
+        } else {
+            setMessage("enter");
+        }
+    }
+
+    public void setAction(int newAction) {
+        EnterKey key = (EnterKey) keys.get(R.id.enter);
+
+        if (key == null) {
+            return;
+        }
+
+        key.action = newAction;
+    }
+
+    public void setMessage(String newMessage) {
+        EnterKey key = (EnterKey) keys.get(R.id.enter);
+
+        if (key == null) {
+            return;
+        }
+
+        key.message = newMessage;
+    }
+
 
     private String iotated(String letter) {
         return getLetter(R.string.letter_yea) + letter;
