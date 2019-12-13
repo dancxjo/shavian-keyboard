@@ -1,0 +1,60 @@
+<resources>
+    <string name="app_name">shavian keyboard</string>
+    <string name="action_settings">settings</string>
+
+    <string name="long_vowels">Long</string>
+    <string name="short_vowels">Short</string>
+
+    <string name="r_color">+&#x1046e;</string>
+    <string name="iota">&#x10458;+</string>
+
+
+    <string name="letter_peep">&#x10450;</string>
+    <string name="letter_tot">&#x10451;</string>
+    <string name="letter_kick">&#x10452;</string>
+    <string name="letter_fee">&#x10453;</string>
+    <string name="letter_thigh">&#x10454;</string>
+    <string name="letter_so">&#x10455;</string>
+    <string name="letter_sure">&#x10456;</string>
+    <string name="letter_church">&#x10457;</string>
+    <string name="letter_yea">&#x10458;</string>
+    <string name="letter_hung">&#x10459;</string>
+    <string name="letter_bib">&#x1045a;</string>
+    <string name="letter_dead">&#x1045b;</string>
+    <string name="letter_gag">&#x1045c;</string>
+    <string name="letter_vow">&#x1045d;</string>
+    <string name="letter_they">&#x1045e;</string>
+    <string name="letter_zoo">&#x1045f;</string>
+    <string name="letter_measure">&#x10460;</string>
+    <string name="letter_judge">&#x10461;</string>
+    <string name="letter_woe">&#x10462;</string>
+    <string name="letter_haha">&#x10463;</string>
+    <string name="letter_loll">&#x10464;</string>
+    <string name="letter_mime">&#x10465;</string>
+    <string name="letter_if">&#x10466;</string>
+    <string name="letter_egg">&#x10467;</string>
+    <string name="letter_ash">&#x10468;</string>
+    <string name="letter_ado">&#x10469;</string>
+    <string name="letter_on">&#x1046a;</string>
+    <string name="letter_wool">&#x1046b;</string>
+    <string name="letter_out">&#x1046c;</string>
+    <string name="letter_ah">&#x1046d;</string>
+    <string name="letter_roar">&#x1046e;</string>
+    <string name="letter_nun">&#x1046f;</string>
+    <string name="letter_eat">&#x10470;</string>
+    <string name="letter_age">&#x10471;</string>
+    <string name="letter_ice">&#x10472;</string>
+    <string name="letter_up">&#x10473;</string>
+    <string name="letter_oak">&#x10474;</string>
+    <string name="letter_ooze">&#x10475;</string>
+    <string name="letter_oil">&#x10476;</string>
+    <string name="letter_awe">&#x10477;</string>
+    <string name="letter_are">&#x10478;</string>
+    <string name="letter_or">&#x10479;</string>
+    <string name="letter_air">&#x1047a;</string>
+    <string name="letter_err">&#x1047b;</string>
+    <string name="letter_array">&#x1047c;</string>
+    <string name="letter_ear">&#x1047d;</string>
+    <string name="letter_ian">&#x1047e;</string>
+    <string name="letter_yew">&#x1047f;</string>
+</resources>
